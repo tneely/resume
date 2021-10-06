@@ -2,11 +2,11 @@
 
 An unnecessarily complicated resume generator.
 
-## How
+## Basics
 
 On commit, this repository uses the `resume.tex` LaTeX file to build the resume into a PDF, image for the README, and webpage for GitHub pages.
 
-## Getting Started
+## Development
 
 If you want to develop locally, pick your
 
@@ -23,3 +23,7 @@ docker run --rm --volume "`pwd`:/data" --user `id -u`:`id -g` pandoc/latex resum
 Install your favorite LaTex distribution (I recommend [TeX Live](https://www.tug.org/texlive/)) and run `latexmk` to generate a PDF of the resume.
 
 Once installed, you can also leverage tools like the LaTeX Workshop extension in VSCode to quickly preview the doc.
+
+## Result
+
+![A photo of a resume](resume.jpg)
