@@ -20,9 +20,9 @@ docker run --rm --volume "`pwd`:/data" --user `id -u`:`id -g` pandoc/latex resum
 
 ### Hardish Mode
 
-Install your favorite LaTex distribution (I recommend [TeX Live](https://www.tug.org/texlive/)) and run `latexmk` to generate a PDF of the resume.
+Install your favorite LaTex distribution (I recommend [TeX Live](https://www.tug.org/texlive/)) and run `latexmk` to generate a PDF of the resume. Watch with `latexmk -pvc`.
 
-Once installed, you can also leverage tools like the LaTeX Workshop extension in VSCode to quickly preview the doc.
+Once installed, you can also leverage tools like the LaTeX Workshop extension in VSCode. (Don't forget to update your path!)
 
 ## Result
 
