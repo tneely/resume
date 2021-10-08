@@ -8,7 +8,7 @@ On commit, this repository uses the `resume.tex` LaTeX file to build the resume 
 
 ## Development
 
-If you want to develop locally, pick your
+If you want to develop locally, pick your favorite mode to get started.
 
 ### Easy Mode
 
@@ -26,4 +26,4 @@ Once installed, you can also leverage tools like the LaTeX Workshop extension in
 
 ## Result
 
-![A photo of a resume](resume.jpg)
+![A photo of a resume](dist/resume.jpg)
