@@ -3,6 +3,7 @@ name: Generate
 on:
   push:
     branches: [ main ]
+    # Careful! If you commit anything outside of these directories the action will loop FOREVER!!1!
     paths-ignore:
       - "dist/**"
       - "site/**"
@@ -17,6 +18,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Setup
+        run: mkdir -p dist site
+
       - name: Generate PDF
         uses: docker://pandoc/latex:latest
         with:
@@ -25,7 +29,7 @@ jobs:
       - name: Generate JPG
         uses: docker://dpokidov/imagemagick:latest
         with:
-          args: dist/resume.pdf dist/resume.jpg
+          args: resume.pdf dist/resume.jpg
 
       - name: Commit Code
         uses: devops-infra/action-commit-push@master
