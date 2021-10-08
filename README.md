@@ -27,3 +27,5 @@ Once installed, you can also leverage tools like the LaTeX Workshop extension in
 ## Result
 
 ![A photo of a resume](dist/resume.jpg)
+
+Check out the [PDF](dist/resume.pdf) and [page](https://tneely.github.io/resume/) too!
