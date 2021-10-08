@@ -19,9 +19,9 @@ jobs:
         run: mkdir -p site
 
       - name: Generate PDF
-        uses: docker://pandoc/latex:latest
+        uses: repaction/texlive@mini-v2
         with:
-          args: resume.tex --output=resume.pdf
+          tex_files: resume.tex
 
       - name: Generate JPG
         uses: docker://dpokidov/imagemagick:latest
@@ -37,7 +37,7 @@ jobs:
       - name: Generate HTML
         uses: docker://pandoc/latex:latest
         with:
-          args: resume.tex --output=site/index.html --standalone --metadata lang=en
+          args: resume.pdf --output=site/index.html --standalone --metadata lang=en
 
       - name: Deploy Page
         uses: peaceiris/actions-gh-pages@v3
