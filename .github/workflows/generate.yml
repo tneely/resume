@@ -32,8 +32,7 @@ jobs:
         uses: devops-infra/action-commit-push@master
         with:
           github_token: "${{ secrets.GITHUB_TOKEN }}"
-          commit_prefix: "chore:"
-          commit_message: "Regenerate docs"
+          commit_message: "chore: Regenerate docs"
 
       - name: Generate HTML
         uses: docker://pandoc/latex:latest
