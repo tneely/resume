@@ -16,17 +16,17 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Setup
-        run: mkdir -p dist site
+        run: mkdir -p site
 
       - name: Generate PDF
         uses: docker://pandoc/latex:latest
         with:
-          args: resume.tex --output=dist/resume.pdf
+          args: resume.tex --output=resume.pdf
 
       - name: Generate JPG
         uses: docker://dpokidov/imagemagick:latest
         with:
-          args: -density 600 resume.pdf dist/resume.jpg
+          args: -density 600 resume.pdf resume.jpg
 
       - name: Commit Code
         uses: devops-infra/action-commit-push@master
