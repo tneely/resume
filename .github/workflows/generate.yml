@@ -26,7 +26,7 @@ jobs:
       - name: Generate JPG
         uses: docker://dpokidov/imagemagick:latest
         with:
-          args: resume.pdf dist/resume.jpg
+          args: -density 600 resume.pdf dist/resume.jpg
 
       - name: Commit Code
         uses: devops-infra/action-commit-push@master
