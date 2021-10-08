@@ -33,14 +33,3 @@ jobs:
         with:
           github_token: "${{ secrets.GITHUB_TOKEN }}"
           commit_message: "chore: Regenerate docs"
-
-      - name: Generate HTML
-        uses: docker://pandoc/latex:latest
-        with:
-          args: resume.pdf --output=site/index.html --standalone --metadata lang=en
-
-      - name: Deploy Page
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./site
