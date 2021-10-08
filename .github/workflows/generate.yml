@@ -1,0 +1,46 @@
+name: Generate
+
+on:
+  push:
+    branches: [ main ]
+    paths-ignore:
+      - "dist/**"
+      - "site/**"
+
+  # Allows workflow to be manually run from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Generate PDF
+        uses: docker://pandoc/latex:latest
+        with:
+          args: resume.tex --output=dist/resume.pdf
+
+      - name: Generate JPG
+        uses: docker://dpokidov/imagemagick:latest
+        with:
+          args: dist/resume.pdf dist/resume.jpg
+
+      - name: Commit Code
+        uses: devops-infra/action-commit-push@master
+        with:
+          github_token: "${{ secrets.GITHUB_TOKEN }}"
+          commit_prefix: "chore:"
+          commit_message: "Regenerate docs"
+
+      - name: Generate HTML
+        uses: docker://pandoc/latex:latest
+        with:
+          args: resume.tex --output=site/index.html --standalone
+
+      - name: Deploy Page
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
