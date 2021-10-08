@@ -19,9 +19,9 @@ jobs:
         run: mkdir -p site
 
       - name: Generate PDF
-        uses: repaction/texlive@mini-v2
+        uses: dante-ev/latex-action@2021-A
         with:
-          tex_files: resume.tex
+          root_file: resume.tex
 
       - name: Generate JPG
         uses: docker://dpokidov/imagemagick:latest
