@@ -1,9 +1,8 @@
 % - - - - - - - - - - - 
-% Author: Taylor Neely
 % License: MIT
 % - - - - - - - - - - - 
 
-\documentclass{article}
+\documentclass[11pt]{article}
 
 \title{Resume}
 \author{Taylor Neely}
@@ -15,9 +14,17 @@
 \usepackage{geometry}
 \usepackage{ifthen}
 \usepackage{titlesec}
+\usepackage{enumitem}
+
+% Font & encoding
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\input{glyphtounicode}
+\pdfgentounicode=1
 
 % Set layout and margins (H, V)
-\geometry{letterpaper, margin={0.5in, 0.5in}} %TODO: Make margins symmetrical
+\geometry{letterpaper, margin={0.5in, 0.5in}}
 \raggedbottom
 \raggedright
 \setlength{\tabcolsep}{0in}
@@ -29,28 +36,87 @@
 \renewcommand{\footrulewidth}{0pt}
 
 % Format overrides
-\titleformat{\section}
-  {\scshape \large \vspace{-5pt}}{}{0em}{}[\titlerule \vspace{-5pt}]
+\titleformat{\section}{\scshape \Large \vspace{-5pt}}{}{0em}{}[\titlerule]
 
-% Enforce machine reability
-\pdfgentounicode=1
+% Commands
 
-\newcommand*{\resumeHeader}[4]{%
-    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}l}
-        \textbf{\large{#1}} & Email: \href{mailto:#2}{#2}\\
-        \href{#3}{#3} & Phone: \href{tel:#4}{#4}
-    \end{tabular*}
+\newcommand*{\header}[4]{
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+        \hspace{-5pt}\textbf{\LARGE{#1}} & \href{mailto:#2}{#2}\\
+        \href{#3}{#3} & \href{tel:#4}{#4}
+    \end{tabular*}\vspace{-5pt}
 }
+
+\newcommand*{\workSectionStart}[1]{\section{#1}\begin{itemize}[label={}, leftmargin=*]}
+
+    \newcommand*{\workItem}[4]{\item
+        \begin{tabular*}{\linewidth}{l@{\extracolsep{\fill}}r}
+            \textbf{\large{#1}} & {#2}\\
+            \textit{#3} & \textit{#4}
+        \end{tabular*}
+    }
+
+    \newcommand{\workDataStart}{\begin{itemize}[label=$\circ$]\vspace{-4pt}}
+        \newcommand*{\workDataItem}[2][]{\item\ifthenelse{\equal{#1}{}}{}{\textbf{#1:}} #2}
+    \newcommand{\workDataEnd}{\end{itemize}}
+
+\newcommand*{\workSectionEnd}{\end{itemize}}
+
+% Whew! All set up now to write the resume below!
 
 \begin{document}
 
-\resumeHeader
+\header
     {Taylor Neely}
     {tneely417@gmail.com}
     {https://tneely.com}
-    {734-546-4691} % TODO: Fix warning
+    {734-546-4691}
 
-\section{Education}
-I dum.
+\workSectionStart{Education}
+    \workItem{Dartmouth College}{Hanover, NH}
+        {Bachelor of Arts in Biology, Computer Science with Honors; 3.75 GPA}{Sept. 2012 - Jun 2016}
+\workSectionEnd
+
+\workSectionStart{Experience}
+    \workItem{Amazon Web Services (AWS)}{Seattle, WA}
+        {Software Development Engineer}{Apr. 2021 - Present}
+        \workDataStart
+            \workDataItem[Amazon Genomics CLI]{Designed and built an open source CLI tool that enables genomics and
+                life science researchers to quickly deploy genomics workflows on AWS.}
+            \workDataItem[CI/CD Pipelines]{Implemented continuous integration and delivery tooling to automate build, 
+                testing, and release software packages.}
+        \workDataEnd
+
+    \workItem{Amazon}{Seattle, WA}
+        {Software Development Engineer}{July 2019 - Apr. 2021}
+        \workDataStart
+            \workDataItem[Membership Journeys]{Developed a scalable, low latency, rule-based customization engine 
+            to display accurate and relevant content to customers across various use cases.}
+            \workDataItem[Prime MFA]{Enabled customers to quickly and seamlessly authenticate with their bank when 
+                signing up for subscription services in compliance with GDPR privacy laws.}
+            \workDataItem[TODO]{Add more work items.}
+        \workDataEnd
+
+    \workItem{Epic Systems}{Verona, WI}
+        {Software Developer}{Aug. 2016 - May 2019}
+        \workDataStart
+            \workDataItem[Tapestry]{Worked closely with integrated payer provider networks to develop accurate and
+                comprehensive cost estimate tooling for prospective patients.}
+            \workDataItem[OpTime]{Developed clinically integrated applications aimed at improving nurse and physician 
+                efficiency in readying patients for surgery. }
+        \workDataEnd
+
+    \workItem{Evolutionary Computational Genomics Lab}{Hanover, NH}
+        {James O. Freedman Presidential Scholar}{Jan. 2015 - June 2016}
+        \workDataStart
+            \workDataItem[GTA Hunter]{Worked with large genomic datasets while studying Gene Transfer Agents (GTA) and 
+                developed a ML-based system to identify GTAs using support-vector machines.}
+        \workDataEnd
+\workSectionEnd
+
+\workSectionStart{Projects}
+    \workDataItem[Jelly]{A CDK construct library for quickly deploying secure, scalable web applications.}
+    \workDataItem[TODO]{Add more projects.}
+\workSectionEnd
 
 \end{document}
