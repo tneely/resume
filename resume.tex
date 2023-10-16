@@ -36,7 +36,7 @@
 \renewcommand{\footrulewidth}{0pt}
 
 % Format overrides
-\titleformat{\section}{\scshape \Large \vspace{-5pt}}{}{0em}{}[\titlerule]
+\titleformat{\section}{\scshape \Large \vspace{-10pt}}{}{0em}{}[\titlerule]
 
 % Commands
 
@@ -72,52 +72,51 @@
     {https://tneely.com}
     {734-546-4691}
 
-\workSectionStart{Education}
-    \workItem{Dartmouth College}{Hanover, NH}
-        {Bachelor of Arts in Biology, Computer Science with Honors; 3.75 GPA}{Sept. 2012 - Jun 2016}
-\workSectionEnd
-
 \workSectionStart{Experience}
     \workItem{Amazon Web Services (AWS)}{Seattle, WA}
         {Senior Software Development Engineer (Health AI)}{Apr. 2021 - Present}
         \workDataStart
-            \workDataItem[Service Lead]{Leading implementation of a new AWS managed service that utilizes a 
-                scalable microservice architecture to support genomics workflows in the cloud.}
-            \workDataItem[Cloud Architecture]{Worked closely with product stakeholders to architect a cloud 
-                infrastructure capable of scaling to handle petabytes of genomic data.}
-            \workDataItem[Amazon Genomics CLI]{Designed and built an open source CLI tooling to simplify 
-                the processes of deploying the AWS infrastructure required to run genomics workflows in the cloud, 
+            \workDataItem[Service Lead]{Designed and launched AWS HealthOmics, an AWS managed service capable of storing, processing, and
+                analyzing petabyte-scale genomics data across 7 AWS regions. Since GA, Taylor has guided and driven the launch of dozens of
+                features and service enhancements, expanding the scale of the service by 10x and reducing operational overhead by 80\%.}
+            \workDataItem[Cloud Architecture]{Built efficient and scalable cloud-native services, leveraging a serverless, event-driven 
+                architecture when possible. This has allowed AWS HealthOmics to scale to support 5,000 RPS over 100 Gbps of bandwidth and
+                ingest petabytes of data per day.}
+            \workDataItem[Open Source]{Wrote and maintained open source tooling like the Amazon Genomics CLI, an open source tool designed to simplify 
+                the process of deploying the AWS infrastructure required to run genomics workflows in the cloud, 
                 to submit those workflows to run, and to monitor the logs and outputs of those workflows.}
-            \workDataItem[Operational Excellence]{Implemented continuous integration and delivery tooling as infrastructure as code
-                to automate build, test, release, and monitor processes.}
+            \workDataItem[Operational Excellence]{Automated service creation, deployment, and testing to enable our teams to launch AWS
+                HealthOmics across new regions in under 10 days and with zero developer overhead. Taylor has also implemented continuous
+                integration and delivery tooling via infrastructure as code to support this automation and drive our build, test, release,
+                and monitoring processes.}
         \workDataEnd
 
     \workItem{Amazon}{Seattle, WA}
         {Software Development Engineer (Prime)}{July 2019 - Apr. 2021}
         \workDataStart
-            \workDataItem[Membership Journeys]{Developed a scalable, low latency, rule-based customization engine 
-                to display accurate and relevant content to customers across various use cases.}
-            \workDataItem[Prime MFA]{Enabled customers to quickly and seamlessly authenticate with their bank when 
-                signing up for subscription services in compliance with GDPR privacy laws.}
-            \workDataItem[Cloud Infrastructure]{Wrote and launched well-architected services using infrastructure as code for AWS,
-                complete with metrics, alarms, and monitoring dashboards.}
+            \workDataItem[Customization]{Developed a scalable, low latency, rule-based customization engine to display accurate
+                and relevant content to customers across various states in their membership lifecycle. This has been used to drive
+                customer aquisition and retention across the Prime organization, supporting over 10 teams and 20 use cases.}
+            \workDataItem[Compliance]{Worked across 7 different teams and code bases to idenify gaps in GDPR compliance and address issues in
+                functionality prior to enforcement of the law. This has enabled customers to seamlessly and securely authenticate with
+                their banks when signing up for Amazon Prime subscriptions.}
+            \workDataItem[Cloud Infrastructure]{Identified infrastructure as code as a operational win for Amazon, pioneering and driving
+                adoption of CDK across the Prime organization. This has helped teams quickly and repeatedly write and launch
+                well-architected services using infrastructure as code for AWS, complete with metrics, alarms, and monitoring dashboards.}
         \workDataEnd
 
     \workItem{Epic Systems}{Verona, WI}
         {Software Developer}{Aug. 2016 - May 2019}
         \workDataStart
-            \workDataItem[Tapestry]{Worked closely with integrated payer provider networks to develop accurate and
-                comprehensive cost estimate tooling for prospective patients by aggregating and anonymizing claims data.}
-            \workDataItem[OpTime]{Developed clinically integrated applications aimed at improving nurse and physician 
-                efficiency in readying patients for surgery. }
+            \workDataItem[Customer Driven]{Worked closely customers to idenify gaps in our software and opportunities for innovation: 
+                comprehensive cost estimate tooling for prospective patients, clinically integrated checklists to aid patient readiness and
+                reduce surgery delays and cancellations.}
         \workDataEnd
+\workSectionEnd
 
-    \workItem{Evolutionary Computational Genomics Lab}{Hanover, NH}
-        {James O. Freedman Presidential Scholar}{Jan. 2015 - June 2016}
-        \workDataStart
-            \workDataItem[GTA Hunter]{Worked with large genomic datasets while studying Gene Transfer Agents (GTA) to 
-                develop a machine learning-based system to identify GTAs using support-vector machines.}
-        \workDataEnd
+\workSectionStart{Education}
+    \workItem{Dartmouth College}{Hanover, NH}
+        {Bachelor of Arts in Biology, Computer Science with Honors}{2012 - 2016}
 \workSectionEnd
 
 \center{\tiny{\href{https://github.com/tneely/resume}{This resume generated on \today}}
