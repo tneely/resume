@@ -1,6 +1,6 @@
-% - - - - - - - - - - - 
+% - - - - - - - - - - -
 % License: MIT
-% - - - - - - - - - - - 
+% - - - - - - - - - - -
 
 \documentclass[12pt]{article}
 
@@ -62,6 +62,8 @@
 
 \newcommand*{\workSectionEnd}{\end{itemize}}
 
+\newcommand*{\simpleItem}[1]{\item #1}
+
 % Whew! All set up now to write the resume below!
 
 \begin{document}
@@ -74,42 +76,39 @@
 
 \workSectionStart{Experience}
     \workItem{Amazon Web Services (AWS)}{Seattle, WA}
-        {Senior Software Development Engineer (Health AI)}{Apr. 2021 - Present}
+        {Senior Software Development Engineer, Aurora DSQL}{Jan. 2024 - Present}
         \workDataStart
-            \workDataItem[Service Lead]{Designed and launched AWS HealthOmics, an AWS managed service capable of storing, processing, and
-                analyzing petabyte-scale genomics data across 7 AWS regions. Since GA, Taylor has guided and driven the launch of dozens of
-                features and service enhancements, expanding the scale of the service by 10x and reducing operational overhead by 80\%.}
-            \workDataItem[Cloud Architecture]{Built efficient and scalable cloud-native services, leveraging a serverless, event-driven 
-                architecture when possible. This has allowed AWS HealthOmics to scale to support 5,000 RPS over 100 Gbps of bandwidth and
-                ingest petabytes of data per day.}
-            \workDataItem[Open Source]{Wrote and maintained open source tooling like the Amazon Genomics CLI, an open source tool designed to simplify 
-                the process of deploying the AWS infrastructure required to run genomics workflows in the cloud, 
-                to submit those workflows to run, and to monitor the logs and outputs of those workflows.}
-            \workDataItem[Operational Excellence]{Automated service creation, deployment, and testing to enable our teams to launch AWS
-                HealthOmics across new regions in under 10 days and with zero developer overhead.}
+            \workDataItem[Distributed Systems]{Designed and built core components of \textbf{Aurora DSQL}, a distributed, cloud-native PostgreSQL database written in Rust.}
+            \workDataItem[Networking]{Implemented high-performance networking layers to enable low-latency communication and efficient query routing across a cluster of nodes.}
+            \workDataItem[Transaction Pooling]{Developed transaction pooling and coordination mechanisms to ensure correctness and scalability under heavy concurrent workloads.}
+            \workDataItem[Rust Expertise]{Leveraged advanced Rust features for memory safety, concurrency, and performance in a large-scale production system.}
+        \workDataEnd
+
+    \workItem{Amazon Web Services (AWS)}{Seattle, WA}
+        {Senior Software Development Engineer, Health AI}{Apr. 2021 -- Dec. 2023}
+        \workDataStart
+            \workDataItem[Service Leadership]{Led design and launch of \textbf{AWS HealthOmics}, a managed service for genomics data. Grew adoption 10x post-GA while cutting operational overhead 80\%, and drove dozens of feature releases and region launches.}
+            \workDataItem[Cloud Architecture]{Built event-driven, serverless systems scaling to \textbf{5,000 RPS, 100 Gbps throughput}, and multi-petabyte daily ingestion.}
         \workDataEnd
 
     \workItem{Amazon}{Seattle, WA}
-        {Software Development Engineer (Prime)}{July 2019 - Apr. 2021}
+        {Software Development Engineer, Prime}{Jul. 2019 -- Apr. 2021}
         \workDataStart
-            \workDataItem[Customization]{Developed a scalable, low latency, rule-based customization engine to display accurate
-                and relevant content to customers across various states in their membership lifecycle. This has been used to drive
-                customer aquisition and retention across the Prime organization, supporting over 10 teams and 20 use cases.}
-            \workDataItem[Compliance]{Worked across 7 different teams and code bases to idenify gaps in GDPR compliance and address issues in
-                functionality prior to enforcement of the law. This has enabled customers to seamlessly and securely authenticate with
-                their banks when signing up for Amazon Prime subscriptions.}
-            \workDataItem[Cloud Infrastructure]{Identified infrastructure as code as a operational win for Amazon, pioneering and driving
-                adoption of CDK across the Prime organization. This has helped teams quickly and repeatedly write and launch
-                well-architected services using infrastructure as code for AWS, complete with metrics, alarms, and monitoring dashboards.}
+            \workDataItem[]{Delivered scalable personalization, GDPR compliance, and infrastructure-as-code solutions across Prime, driving customer acquisition/retention and pioneering AWS CDK adoption across 10+ teams.}
         \workDataEnd
 
     \workItem{Epic Systems}{Verona, WI}
-        {Software Developer}{Aug. 2016 - May 2019}
+        {Software Developer}{Aug. 2016 -- May. 2019}
         \workDataStart
-            \workDataItem[Customer Driven]{Worked closely customers to idenify gaps in our software and opportunities for innovation: 
-                comprehensive cost estimate tooling for prospective patients, clinically integrated checklists to aid patient readiness and
-                reduce surgery delays and cancellations.}
+            \workDataItem[]{Built perioperative electronic health record software for clinical settings, improving patient readiness and reducing surgical delays.}
         \workDataEnd
+\workSectionEnd
+
+\workSectionStart{Publications \& Patents}
+    \simpleItem{R. Kogay, \textbf{T. B. Neely}, D. P. Birnbaum, C. R. Hankel, M. Shakya, O. Zhaxybayeva. 
+        \textit{Machine-Learning Classification Suggests That Many Alphaproteobacterial Prophages May Instead Be Gene Transfer Agents.} 
+        Genome Biology and Evolution, 11(10):2941–2953, Oct. 2019. 
+        \href{https://doi.org/10.1093/gbe/evz206}{doi:10.1093/gbe/evz206}}
 \workSectionEnd
 
 \workSectionStart{Education}
